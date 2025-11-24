@@ -1,0 +1,79 @@
+<svg width="1000" height="450" viewBox="0 0 1000 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1000" height="450" fill="#0F1014" rx="10" ry="10"/>
+    <style>
+        .mono { font: 14px 'Cascadia Code', 'JetBrains Mono', monospace; }
+        .art-mono { font: 12px 'Cascadia Code', 'JetBrains Mono', 'Courier New', monospace; fill: #b4befe; opacity: 0.8; white-space: pre; }
+        .title { fill: #be95ff; font-weight: bold; }
+        .key { fill: #E77FD6; }
+        .value { fill: #C0C0CC; }
+        .separator { fill: #777885; }
+        .logo-code { fill: #be95ff; opacity: 0.7; }
+        .stats-title { fill: #7fc9d6; font-weight: bold; }
+        .github-stats-value { fill: #a4a4b1; font-weight: normal; }
+        .hobbies { fill: #67B3E6; }
+    </style>
+    <g class="art-mono">
+        <text x="12" y="20.0" text-anchor="start" xml:space="preserve">                     +S##?.                       </text>
+        <text x="12" y="34.4" text-anchor="start" xml:space="preserve">            ;*?+,   ;@+,?@%  :*??;                </text>
+        <text x="12" y="48.8" text-anchor="start" xml:space="preserve">          ,S@S*S#,  .;..?@S *@#**#%               </text>
+        <text x="12" y="63.2" text-anchor="start" xml:space="preserve">          %@% .%S, .:*%#@%,.@@; :S?               </text>
+        <text x="12" y="77.6" text-anchor="start" xml:space="preserve">    .;+:. S@S, .  +#@@#?;,,:S@S;::       :++:     </text>
+        <text x="12" y="92.0" text-anchor="start" xml:space="preserve">   *#SS@S,:#@#%*:,@#%@+,%##S%%S@#SS?:  :S@#S#S:   </text>
+        <text x="12" y="106.4" text-anchor="start" xml:space="preserve">  :@%  S@? .+%#SS?+#?%S%#S*%S%?*S#?S@+ S@%. ;@%   </text>
+        <text x="12" y="120.8" text-anchor="start" xml:space="preserve">   *?,.#@* .;*?#*S?*#%?S#*##%%##%@#+@S.S@% .%S;   </text>
+        <text x="12" y="135.2" text-anchor="start" xml:space="preserve">      .#@%:%#####*%S%##%S##%#S%%%SS%#?:#@S        </text>
+        <text x="12" y="149.6" text-anchor="start" xml:space="preserve"> ;%SS%;+S@#S%%%#@#SS#SS%;%SSSS#SS?*##%#@#; ;?%%?: </text>
+        <text x="12" y="164.0" text-anchor="start" xml:space="preserve">?@S?%@@%*????%#S%S@%:       ,*#S%#S*?%%?;;S@@SS@@*</text>
+        <text x="12" y="178.4" text-anchor="start" xml:space="preserve">#@;  ,?#SSS##S??#@*           :##?%#S%%%S@#?,  *@@</text>
+        <text x="12" y="192.8" text-anchor="start" xml:space="preserve">;%S+  ,*%%????S##*::,.      ,::;S#S??%%S#?,  :S##*</text>
+        <text x="12" y="207.20000000000002" text-anchor="start" xml:space="preserve">    :S#%%SSSS%?SS:;?%%?.  +%%?+:*#SS%%SS#S*   :;, </text>
+        <text x="12" y="221.6" text-anchor="start" xml:space="preserve">   .##%S%%%%%S#@*.??#*;, ,;+SS*:,@##%?%%?#@?      </text>
+        <text x="12" y="236.0" text-anchor="start" xml:space="preserve">   .S#@S..+S@#S@* ...    ,. ... :@S#@S+?#S@S      </text>
+        <text x="12" y="250.4" text-anchor="start" xml:space="preserve"> :?+.%##,+##??S%%        ,.     +SS?%@S.S@#; *%*. </text>
+        <text x="12" y="264.8" text-anchor="start" xml:space="preserve">.#@*;S@S:##?S##*?,    ,:.,:     ?+#@?S@,%@#, ,*@? </text>
+        <text x="12" y="279.2" text-anchor="start" xml:space="preserve"> +##@#?.*@###?###*     :+;,    ,#@####S ;#@#??#@+ </text>
+        <text x="12" y="293.6" text-anchor="start" xml:space="preserve">   ,,.,?@@#%;%@%##:   ;*+*+,  .S###?S##+.:*S#S%;  </text>
+        <text x="12" y="308.0" text-anchor="start" xml:space="preserve">     +#@S*,:S@%?###;   :+;.  ,S@#?##??S##S*,      </text>
+        <text x="12" y="322.40000000000003" text-anchor="start" xml:space="preserve">    :@@?  ,#@%*#S#%+?:     .*%%##S*S@S%S#@@#,     </text>
+        <text x="12" y="336.8" text-anchor="start" xml:space="preserve">    ,#@?:,:@#%#S*@S ,?%*++%#?.?#?##*S#, .+#@*     </text>
+        <text x="12" y="351.2" text-anchor="start" xml:space="preserve">     ;S##; +#@@#+%#.  :?SS?:  ?#+%@%S@:,SS@#,     </text>
+        <text x="12" y="365.6" text-anchor="start" xml:space="preserve">       .    .+S@#%??:        ,*?%#@#@?  ;*+.      </text>
+        <text x="12" y="380.0" text-anchor="start" xml:space="preserve">           +?: *@@###,     .+?S@@S%*:             </text>
+        <text x="12" y="394.40000000000003" text-anchor="start" xml:space="preserve">          ;@#,.*@@*?#S+.  .?%##+,                 </text>
+        <text x="12" y="408.8" text-anchor="start" xml:space="preserve">          .S@##@#?  .:?S: :###, +;                </text>
+        <text x="12" y="423.2" text-anchor="start" xml:space="preserve">            :+*;,    ;,S% .S@#*;#S                </text>
+        <text x="12" y="437.6" text-anchor="start" xml:space="preserve">                     ?SS:  .?#@#%,                </text>
+    </g>
+    <g class="mono" transform="translate(375, 40)">
+        <text x="0" y="0" class="title">patrykanz@github</text>
+        <text x="0" y="20" class="separator">----------------</text>
+        <text x="0" y="45" class="key">OS:</text>
+        <text x="125" y="45" class="value">Windows, Linux Arch, macOS</text>
+        <text x="0" y="65" class="key">Host:</text>
+        <text x="125" y="65" class="value">Patryk Anzorge</text>
+        <text x="0" y="85" class="key">Kernel:</text>
+        <text x="125" y="85" class="value">DevOps Engineer</text>
+        <text x="0" y="105" class="key">Shell:</text>
+        <text x="125" y="105" class="value">bash</text>
+        <text x="0" y="125" class="key">Uptime:</text>
+        <text x="125" y="125" class="value">21 years, 9 months, 18 days</text>
+        <text x="0" y="145" class="key">Stack:</text>
+        <text x="125" y="145" class="value">Azure, AWS, GCP, Docker, Kubernetes, Terraform, Python</text>
+        <text x="0" y="165" class="key">Editors:</text>
+        <text x="125" y="165" class="value">Neovim, VSCode, Cursor</text>
+        <text x="0" y="185" class="key">Location:</text>
+        <text x="125" y="185" class="value">Europe/Poland</text>
+        <text x="0" y="215" class="title">GitHub</text>
+        <text x="0" y="225" class="separator">------</text>
+        <text x="0" y="245" class="key">Repositories:</text>
+        <text x="125" y="245" class="github-stats-value">34</text>
+        <text x="0" y="265" class="key">Total Commits:</text>
+        <text x="125" y="265" class="github-stats-value">402</text>
+        <text x="0" y="285" class="key">Total LoC:</text>
+        <text x="125" y="285" class="github-stats-value">133.0K</text>
+        <text x="0" y="315" class="title">Hobbies</text>
+        <text x="0" y="325" class="separator">-------</text>
+        <text x="0" y="350" class="hobbies">Gym • Video Games • Cycling (PB 150km in 1 day)</text>
+        <text x="0" y="380" class="separator">*This README is automatically updated daily via GitHub Actions.*</text>
+    </g>
+</svg>
