@@ -1,6 +1,6 @@
 import os
 import requests
-from datetime import date
+from datetime import date, timedelta
 
 ASCII_ART = [
     "                     +S##?.                       ",
@@ -55,8 +55,8 @@ def calculate_age(birth_date):
     days = today.day - birth_date.day
     if days < 0:
         months -= 1
-        last_month = today.replace(day=1) - date.resolution
-        days += (today - last_month).days
+        last_month = today.replace(day=1) - timedelta(days=1)
+        days += last_month.day
     if months < 0:
         years -= 1
         months += 12
