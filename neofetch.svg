@@ -56,7 +56,7 @@
         <text x="0" y="105" class="key">Shell:</text>
         <text x="125" y="105" class="value">bash</text>
         <text x="0" y="125" class="key">Uptime:</text>
-        <text x="125" y="125" class="value">21 years, 10 months, 5 days</text>
+        <text x="125" y="125" class="value">21 years, 10 months, 6 days</text>
         <text x="0" y="145" class="key">Stack:</text>
         <text x="125" y="145" class="value">Azure, AWS, GCP, Docker, Kubernetes, Terraform, Python</text>
         <text x="0" y="165" class="key">Editors:</text>
@@ -68,7 +68,7 @@
         <text x="0" y="245" class="key">Repositories:</text>
         <text x="125" y="245" class="github-stats-value">34</text>
         <text x="0" y="265" class="key">Total Commits:</text>
-        <text x="125" y="265" class="github-stats-value">414</text>
+        <text x="125" y="265" class="github-stats-value">415</text>
         <text x="0" y="285" class="key">Total LoC:</text>
         <text x="125" y="285" class="github-stats-value">133.3K</text>
         <text x="0" y="315" class="title">Hobbies</text>
