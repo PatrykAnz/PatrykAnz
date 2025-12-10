@@ -47,30 +47,30 @@
     <g class="mono" transform="translate(375, 40)">
         <text x="0" y="0" class="title">patrykanz@github</text>
         <text x="0" y="20" class="separator">----------------</text>
-        <text x="0" y="45" class="key">OS:</text>
-        <text x="125" y="45" class="value">Windows, Linux Arch, macOS</text>
-        <text x="0" y="65" class="key">Host:</text>
+        <text x="0" y="45" class="key">System:</text>
+        <text x="125" y="45" class="value">Linux Arch, Windows, macOS</text>
+        <text x="0" y="65" class="key">User:</text>
         <text x="125" y="65" class="value">Patryk Anzorge</text>
-        <text x="0" y="85" class="key">Kernel:</text>
+        <text x="0" y="85" class="key">Role:</text>
         <text x="125" y="85" class="value">DevOps Engineer</text>
-        <text x="0" y="105" class="key">Shell:</text>
-        <text x="125" y="105" class="value">bash</text>
+        <text x="0" y="105" class="key">Certs:</text>
+        <text x="125" y="105" class="value">Az-104</text>
         <text x="0" y="125" class="key">Uptime:</text>
-        <text x="125" y="125" class="value">21 years, 9 months, 27 days</text>
-        <text x="0" y="145" class="key">Stack:</text>
-        <text x="125" y="145" class="value">Azure, AWS, GCP, Docker, Kubernetes, Terraform, Python</text>
-        <text x="0" y="165" class="key">Editors:</text>
-        <text x="125" y="165" class="value">Neovim, VSCode, Cursor</text>
+        <text x="125" y="125" class="value">21 years, 10 months, 12 days</text>
+        <text x="0" y="145" class="key">Platform:</text>
+        <text x="125" y="145" class="value">Azure, AWS, GCP</text>
+        <text x="0" y="165" class="key">Tooling:</text>
+        <text x="125" y="165" class="value">Terraform, Kubernetes, Python</text>
         <text x="0" y="185" class="key">Location:</text>
-        <text x="125" y="185" class="value">Europe/Poland</text>
+        <text x="125" y="185" class="value">Poland</text>
         <text x="0" y="215" class="title">GitHub</text>
         <text x="0" y="225" class="separator">------</text>
         <text x="0" y="245" class="key">Repositories:</text>
         <text x="125" y="245" class="github-stats-value">34</text>
         <text x="0" y="265" class="key">Total Commits:</text>
-        <text x="125" y="265" class="github-stats-value">406</text>
+        <text x="125" y="265" class="github-stats-value">470</text>
         <text x="0" y="285" class="key">Total LoC:</text>
-        <text x="125" y="285" class="github-stats-value">133.0K</text>
+        <text x="125" y="285" class="github-stats-value">133.6K</text>
         <text x="0" y="315" class="title">Hobbies</text>
         <text x="0" y="325" class="separator">-------</text>
         <text x="0" y="350" class="hobbies">Gym • Video Games • Cycling (PB 150km in 1 day)</text>
