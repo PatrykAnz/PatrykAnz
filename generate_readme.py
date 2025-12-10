@@ -150,15 +150,14 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
         print(f"Error fetching GitHub stats: {e}")
         print("Using default values. Set GITHUB_TOKEN environment variable for private repo access.")
     USER_DATA = {
-        "OS": "Windows, Linux Arch, macOS",
-        "Host": "Patryk Anzorge",
-        "Kernel": "DevOps Engineer",
-        "Shell": "bash",
+        "System": "Linux Arch, Windows, macOS",
+        "User": "Patryk Anzorge",
+        "Role": "DevOps Engineer",
+        "Certs": "Az-104",
         "Uptime": uptime,
-        "Stack": "Azure, AWS, GCP, Docker, Kubernetes, Terraform, Python",
-        "Editors": "Neovim, VSCode, Cursor",
-        "Location": "Europe/Poland",
-        "Theme": "Catppuccin Mocha",
+        "Platform": "Azure, AWS, GCP",
+        "Tooling": "Terraform, Kubernetes, Python",
+        "Location": "Poland",
         "Repos": str(github_stats["repos"]),
         "Commits": format_number(github_stats["commits"]),
         "LoC": format_number(github_stats["loc"]),
@@ -194,20 +193,20 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
     <g class="mono" transform="translate(375, 40)">
         <text x="0" y="0" class="title">patrykanz@github</text>
         <text x="0" y="20" class="separator">{'-' * len('patrykanz@github')}</text>
-        <text x="0" y="45" class="key">OS:</text>
-        <text x="125" y="45" class="value">{USER_DATA['OS']}</text>
-        <text x="0" y="65" class="key">Host:</text>
-        <text x="125" y="65" class="value">{USER_DATA['Host']}</text>
-        <text x="0" y="85" class="key">Kernel:</text>
-        <text x="125" y="85" class="value">{USER_DATA['Kernel']}</text>
-        <text x="0" y="105" class="key">Shell:</text>
-        <text x="125" y="105" class="value">{USER_DATA['Shell']}</text>
+        <text x="0" y="45" class="key">System:</text>
+        <text x="125" y="45" class="value">{USER_DATA['System']}</text>
+        <text x="0" y="65" class="key">User:</text>
+        <text x="125" y="65" class="value">{USER_DATA['User']}</text>
+        <text x="0" y="85" class="key">Role:</text>
+        <text x="125" y="85" class="value">{USER_DATA['Role']}</text>
+        <text x="0" y="105" class="key">Certs:</text>
+        <text x="125" y="105" class="value">{USER_DATA['Certs']}</text>
         <text x="0" y="125" class="key">Uptime:</text>
         <text x="125" y="125" class="value">{USER_DATA['Uptime']}</text>
-        <text x="0" y="145" class="key">Stack:</text>
-        <text x="125" y="145" class="value">{USER_DATA['Stack']}</text>
-        <text x="0" y="165" class="key">Editors:</text>
-        <text x="125" y="165" class="value">{USER_DATA['Editors']}</text>
+        <text x="0" y="145" class="key">Platform:</text>
+        <text x="125" y="145" class="value">{USER_DATA['Platform']}</text>
+        <text x="0" y="165" class="key">Tooling:</text>
+        <text x="125" y="165" class="value">{USER_DATA['Tooling']}</text>
         <text x="0" y="185" class="key">Location:</text>
         <text x="125" y="185" class="value">{USER_DATA['Location']}</text>
         <text x="0" y="215" class="title">GitHub</text>
