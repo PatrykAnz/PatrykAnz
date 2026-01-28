@@ -60,7 +60,10 @@ def calculate_age(birth_date):
     if months < 0:
         years -= 1
         months += 12
-    return f"{years} years, {months} months, {days} days"
+    if days == 0 and months == 0:
+        return f"🎂{years} years, {months} months, {days} days🎂"
+    else:
+        return f"{years} years, {months} months, {days} days"
 
 def get_github_stats(username, token=None):
     headers = {"Accept": "application/vnd.github.v3+json"}
