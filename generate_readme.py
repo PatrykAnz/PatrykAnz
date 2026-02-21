@@ -212,7 +212,7 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
         "Repos": str(github_stats["repos"]),
         "Commits": format_number(github_stats["commits"]),
         "LoC": format_number(github_stats["loc"]),
-        "Hobbies": f"{typing_hobby} • Video Games • Cycling (PB 150km in 1 day) • Gym"
+        "Hobbies": f"{typing_hobby} • Cycling (PB 150km in 1 day) • Gym"
     }
     ASCII_ART_COLOR = "#b4befe"
     ASCII_ART_OPACITY = 0.8
