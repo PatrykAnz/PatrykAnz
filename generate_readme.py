@@ -142,6 +142,47 @@ def format_number(num):
         return f"{num / 1_000:.1f}K"
     return str(num)
 
+def get_monkeytype_stats(username, ape_key=None):
+    if not username:
+        return None
+    headers = {"Accept": "application/json"}
+    if ape_key:
+        headers["Authorization"] = f"ApeKey {ape_key}"
+    try:
+        profile_response = requests.get(
+            f"https://api.monkeytype.com/users/{username}/profile",
+            headers=headers,
+            params={"isUid": "false"},
+            timeout=20,
+        )
+        if profile_response.status_code != 200:
+            print(f"Error: {profile_response.status_code}")
+            return None
+        profile_data = profile_response.json().get("data", {})
+        personal_bests_data = profile_data.get("personalBests", {}).get("time", {}).get("60", [])
+        rank_data = profile_data.get("allTimeLbs", {}).get("time", {}).get("60", {}).get("english", {})
+        if not personal_bests_data or not rank_data:
+            return None
+        best_english = next(
+            (
+                row for row in personal_bests_data
+                if row.get("language") == "english"
+                and row.get("punctuation") is False
+                and row.get("numbers") is False
+            ),
+            personal_bests_data[0],
+        )
+        wpm = float(best_english.get("wpm", 0))
+        rank = int(rank_data.get("rank", 0))
+        count = int(rank_data.get("count", 0))
+        if rank <= 0 or count <= 0:
+            return None
+        top_percent = (rank * 100) // count
+        return {"wpm": wpm, "top_percent": top_percent}
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+
 def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz", github_token=None):
     birth_date = date(2004, 1, 28)
     uptime = calculate_age(birth_date)
@@ -152,6 +193,13 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
     except Exception as e:
         print(f"Error fetching GitHub stats: {e}")
         print("Using default values. Set GITHUB_TOKEN environment variable for private repo access.")
+    monkeytype_username = os.getenv("MONKEYTYPE_USERNAME")
+    monkeytype_ape_key = os.getenv("MONKEYTYPE_APE_KEY")
+    monkeytype_stats = get_monkeytype_stats(monkeytype_username, monkeytype_ape_key)
+    if monkeytype_stats:
+        typing_hobby = f"Typing (MT: {monkeytype_stats['wpm']:.0f}WPM, Top {monkeytype_stats['top_percent']}%)"
+    else:
+        typing_hobby = "Typing (MT: 124WPM, Top 6%)"
     USER_DATA = {
         "System": "Linux Arch, Windows, macOS",
         "User": "Patryk Anzorge",
@@ -164,7 +212,7 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
         "Repos": str(github_stats["repos"]),
         "Commits": format_number(github_stats["commits"]),
         "LoC": format_number(github_stats["loc"]),
-        "Hobbies": "Gym • Video Games • Cycling (PB 150km in 1 day)"
+        "Hobbies": f"{typing_hobby} • Video Games • Cycling (PB 150km in 1 day) • Gym"
     }
     ASCII_ART_COLOR = "#b4befe"
     ASCII_ART_OPACITY = 0.8
