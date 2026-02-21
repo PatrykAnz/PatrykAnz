@@ -66,14 +66,14 @@
         <text x="0" y="215" class="title">GitHub</text>
         <text x="0" y="225" class="separator">------</text>
         <text x="0" y="245" class="key">Repositories:</text>
-        <text x="125" y="245" class="github-stats-value">4</text>
+        <text x="125" y="245" class="github-stats-value">37</text>
         <text x="0" y="265" class="key">Total Commits:</text>
-        <text x="125" y="265" class="github-stats-value">108</text>
+        <text x="125" y="265" class="github-stats-value">483</text>
         <text x="0" y="285" class="key">Total LoC:</text>
-        <text x="125" y="285" class="github-stats-value">910</text>
+        <text x="125" y="285" class="github-stats-value">136.9K</text>
         <text x="0" y="315" class="title">Hobbies</text>
         <text x="0" y="325" class="separator">-------</text>
-        <text x="0" y="350" class="hobbies">Typing (MT: 124WPM, Top 6%) • Video Games • Cycling (PB 150km in 1 day) • Gym</text>
+        <text x="0" y="350" class="hobbies">Typing (MT: 124WPM, Top 6%) • Cycling (PB 150km in 1 day) • Gym</text>
         <text x="0" y="380" class="separator">*This README is automatically updated daily via GitHub Actions.*</text>
     </g>
 </svg>
