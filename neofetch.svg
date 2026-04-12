@@ -56,7 +56,7 @@
         <text x="0" y="105" class="key">Certs:</text>
         <text x="125" y="105" class="value">Az-104</text>
         <text x="0" y="125" class="key">Uptime:</text>
-        <text x="125" y="125" class="value">22 years, 2 months, 14 days</text>
+        <text x="125" y="125" class="value">22 years, 2 months, 15 days</text>
         <text x="0" y="145" class="key">Platform:</text>
         <text x="125" y="145" class="value">Azure, AWS, GCP</text>
         <text x="0" y="165" class="key">Tooling:</text>
@@ -68,7 +68,7 @@
         <text x="0" y="245" class="key">Repositories:</text>
         <text x="125" y="245" class="github-stats-value">40</text>
         <text x="0" y="265" class="key">Total Commits:</text>
-        <text x="125" y="265" class="github-stats-value">590</text>
+        <text x="125" y="265" class="github-stats-value">595</text>
         <text x="0" y="285" class="key">Total LoC:</text>
         <text x="125" y="285" class="github-stats-value">139.2K</text>
         <text x="0" y="315" class="title">Hobbies</text>
