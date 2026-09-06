@@ -56,7 +56,7 @@
         <text x="0" y="105" class="key">Certs:</text>
         <text x="125" y="105" class="value">Az-400, Az-104</text>
         <text x="0" y="125" class="key">Uptime:</text>
-        <text x="125" y="125" class="value">22 years, 7 months, 8 days</text>
+        <text x="125" y="125" class="value">22 years, 7 months, 9 days</text>
         <text x="0" y="145" class="key">Platform:</text>
         <text x="125" y="145" class="value">Azure, AWS, GCP</text>
         <text x="0" y="165" class="key">Tooling:</text>
