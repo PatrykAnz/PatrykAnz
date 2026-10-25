@@ -44,7 +44,7 @@
         <text x="12" y="423.2" text-anchor="start" xml:space="preserve">            :+*;,    ;,S% .S@#*;#S                </text>
         <text x="12" y="437.6" text-anchor="start" xml:space="preserve">                     ?SS:  .?#@#%,                </text>
     </g>
-    <g class="mono" transform="translate(375, 40)">
+    <g class="mono" transform="translate(395, 40)">
         <text x="0" y="0" class="title">patrykanz@github</text>
         <text x="0" y="20" class="separator">----------------</text>
         <text x="0" y="45" class="key">System:</text>
