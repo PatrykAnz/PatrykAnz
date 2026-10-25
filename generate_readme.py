@@ -1,5 +1,7 @@
 import os
 import requests
+from pathlib import Path
+from tempfile import NamedTemporaryFile
 from datetime import date, timedelta
 
 ASCII_ART = [
@@ -69,71 +71,60 @@ def get_github_stats(username, token=None):
     headers = {"Accept": "application/vnd.github.v3+json"}
     if token:
         headers["Authorization"] = f"token {token}"
-        user_response = requests.get("https://api.github.com/user", headers=headers)
-        if user_response.status_code == 200:
-            username = user_response.json().get("login", username)
+        user_response = requests.get("https://api.github.com/user", headers=headers, timeout=20)
+        user_response.raise_for_status()
+        username = user_response.json()["login"]
     if not username:
         username = "patrykanz"
     repos = []
     page = 1
     per_page = 100
     while True:
-        url = f"https://api.github.com/user/repos" if token else f"https://api.github.com/users/{username}/repos"
+        url = "https://api.github.com/user/repos" if token else f"https://api.github.com/users/{username}/repos"
         params = {"page": page, "per_page": per_page, "type": "all", "sort": "updated"}
-        response = requests.get(url, headers=headers, params=params)
-        if response.status_code != 200:
-            print(f"Error fetching repos: {response.status_code} - {response.text}")
-            return {"repos": 0, "commits": 0, "loc": 0}
+        response = requests.get(url, headers=headers, params=params, timeout=20)
+        response.raise_for_status()
         page_repos = response.json()
-        if not page_repos:
-            break
         repos.extend(page_repos)
         if len(page_repos) < per_page:
             break
         page += 1
-    total_repos = len(repos)
     total_commits = 0
     total_loc = 0
     for repo in repos:
         repo_name = repo["name"]
         owner = repo["owner"]["login"]
-        is_private = repo.get("private", False)
-        if token or not is_private:
-            try:
-                contributors_url = f"https://api.github.com/repos/{owner}/{repo_name}/contributors"
-                page = 1
-                per_page = 100
-                while True:
-                    contributors_params = {"per_page": per_page, "page": page, "anon": "false"}
-                    contributors_response = requests.get(contributors_url, headers=headers, params=contributors_params)
-                    if contributors_response.status_code != 200:
-                        break
-                    contributors = contributors_response.json()
-                    if not contributors:
-                        break
-                    found_user = False
-                    for contributor in contributors:
-                        contrib_login = contributor.get("login", "").lower()
-                        if contrib_login == username.lower():
-                            total_commits += contributor.get("contributions", 0)
-                            found_user = True
-                            break
-                    if found_user or len(contributors) < per_page:
-                        break
-                    page += 1
-            except Exception as e:
-                print(f"Error counting commits for {repo_name}: {e}")
-            try:
-                languages_url = f"https://api.github.com/repos/{owner}/{repo_name}/languages"
-                languages_response = requests.get(languages_url, headers=headers)
-                if languages_response.status_code == 200:
-                    languages = languages_response.json()
-                    repo_bytes = sum(languages.values())
-                    repo_loc_estimate = repo_bytes // 60
-                    total_loc += repo_loc_estimate
-            except Exception as e:
-                print(f"Error counting LOC for {repo_name}: {e}")
-    return {"repos": total_repos, "commits": total_commits, "loc": total_loc}
+        contributors_url = f"https://api.github.com/repos/{owner}/{repo_name}/contributors"
+        page = 1
+        while True:
+            contributors_response = requests.get(
+                contributors_url, headers=headers,
+                params={"per_page": per_page, "page": page, "anon": "false"},
+                timeout=20,
+            )
+            contributors_response.raise_for_status()
+            # Empty repositories have no contributors and return no JSON body.
+            if contributors_response.status_code == 204:
+                break
+            contributors = contributors_response.json()
+            contributor = next(
+                (row for row in contributors if row.get("login", "").lower() == username.lower()),
+                None,
+            )
+            if contributor is not None:
+                total_commits += contributor.get("contributions", 0)
+                break
+            if len(contributors) < per_page:
+                break
+            page += 1
+        languages_response = requests.get(
+            f"https://api.github.com/repos/{owner}/{repo_name}/languages",
+            headers=headers, timeout=20,
+        )
+        languages_response.raise_for_status()
+        # ponytail: approximate LoC from language bytes; use a source scanner for exact counts.
+        total_loc += sum(languages_response.json().values()) // 60
+    return {"repos": len(repos), "commits": total_commits, "loc": total_loc}
 
 def format_number(num):
     if num >= 1_000_000:
@@ -186,13 +177,8 @@ def get_monkeytype_stats(username, ape_key=None):
 def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz", github_token=None):
     birth_date = date(2004, 1, 28)
     uptime = calculate_age(birth_date)
-    github_stats = {"repos": 0, "commits": 0, "loc": 0}
-    try:
-        github_stats = get_github_stats(github_username, github_token)
-        print(f"GitHub stats: {github_stats}")
-    except Exception as e:
-        print(f"Error fetching GitHub stats: {e}")
-        print("Using default values. Set GITHUB_TOKEN environment variable for private repo access.")
+    github_stats = get_github_stats(github_username, github_token)
+    print(f"GitHub stats: {github_stats}")
     monkeytype_username = os.getenv("MONKEYTYPE_USERNAME")
     monkeytype_ape_key = os.getenv("MONKEYTYPE_APE_KEY")
     monkeytype_stats = get_monkeytype_stats(monkeytype_username, monkeytype_ape_key)
@@ -274,14 +260,23 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
         <text x="0" y="380" class="separator">*This README is automatically updated daily via GitHub Actions.*</text>
     </g>
 </svg>"""
+    destination = Path(file_path)
+    temporary = None
     try:
-        with open(file_path, "w", encoding="utf-8") as f:
+        with NamedTemporaryFile(mode="w", encoding="utf-8", dir=destination.parent, delete=False) as f:
+            temporary = Path(f.name)
             f.write(svg_content.strip())
-        print(f"Successfully generated SVG file: {file_path}")
-    except IOError as e:
-        print(f"Error writing file {file_path}: {e}")
+        os.replace(temporary, destination)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+    print(f"Successfully generated SVG file: {file_path}")
 
 if __name__ == "__main__":
     github_token = os.getenv("GITHUB_TOKEN")
     github_username = os.getenv("GITHUB_USERNAME", "patrykanz")
-    generate_neofetch_svg(github_username=github_username, github_token=github_token)
+    try:
+        generate_neofetch_svg(github_username=github_username, github_token=github_token)
+    except requests.RequestException:
+        # Public workflow logs must not expose private repository URLs from API errors.
+        raise SystemExit("GitHub API request failed; existing profile stats were preserved.") from None
