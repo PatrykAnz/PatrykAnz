@@ -227,7 +227,7 @@ def generate_neofetch_svg(file_path="neofetch.svg", github_username="patrykanz",
     </style>
     <g class="art-mono">
 {ascii_svg_lines}    </g>
-    <g class="mono" transform="translate(395, 40)">
+    <g class="mono" transform="translate(396, 40)">
         <text x="0" y="0" class="title">patrykanz@github</text>
         <text x="0" y="20" class="separator">{'-' * len('patrykanz@github')}</text>
         <text x="0" y="45" class="key">System:</text>
