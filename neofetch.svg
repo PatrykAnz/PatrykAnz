@@ -54,7 +54,7 @@
         <text x="0" y="85" class="key">Role:</text>
         <text x="125" y="85" class="value">DevOps Engineer</text>
         <text x="0" y="105" class="key">Certs:</text>
-        <text x="125" y="105" class="value">Az-400, Az-104</text>
+        <text x="125" y="105" class="value">Az-400, Az-104, Terraform Associate</text>
         <text x="0" y="125" class="key">Uptime:</text>
         <text x="125" y="125" class="value">22 years, 9 months, 7 days</text>
         <text x="0" y="145" class="key">Platform:</text>
